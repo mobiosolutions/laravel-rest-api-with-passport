@@ -5,7 +5,21 @@ We will use the in built functionality of laravel for authentication which call 
 
 Laravel provides more security for APIs. So, its good to work on API with Laravel. 
 
-In below example, we will create CRUD operation for Blog using passport authentication.
+#### **What is REST API?**
+Rest API (Representational State Transfer) api's are web standards base architecture and uses HTTP Protocol for exchanging data between applications or systems. 
+In RESTFUL web service HTTP methods like GET, POST, PUT and DELETE can be used to perform CRUD operations.
+
+#### **What is Passport?**
+Laravel makes API authentication a breeze using Laravel Passport. APIs typically use tokens to authenticate users and do not maintain session state between requests.
+you can use passport for user authentication for api's.
+
+#### **Why should we use Passport?**
+Passport provides a full OAuth2 server implementation for your Laravel application in a matter of minutes.
+It was built to make it easy to apply authentication over an API for laravel based web applications. 
+The passport package will register its own database migrations. This command will create the encryption keys needed to generate secure access tokens.
+
+#### **How to implement Passport in REST API?**
+In below example, we will create CRUD operation for Blog's API using passport authentication.
 So, let's start.
 
 **1) Create laravel project.**
