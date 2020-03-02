@@ -1,9 +1,9 @@
 ## **Laravel REST API with Passport**
 
 In this, We will learn that how to work with REST API.
-We will use the in built functionality of laravel for authentication which call passport.
+We will use the in-built functionality of laravel for authentication which calls a passport.
 
-Laravel provides more security for APIs. So, its good to work on API with Laravel. 
+Laravel provides more security for APIs. So, it's good to work on API with Laravel. 
 
 #### **What is REST API?**
 Rest API (Representational State Transfer) api's are web standards base architecture and uses HTTP Protocol for exchanging data between applications or systems. 
@@ -32,7 +32,7 @@ Go to your project path in terminal and run below command for passport authentic
         
         composer require laravel/passport
         
-After successfully install package, we require to get default migration for create new passport tables in our database. so let's run bellow command.
+After successfully installing the package, we are required to get default migration for creating new passport tables in our database. so let's run bellow command:
 
     php artisan migrate
     
@@ -137,7 +137,7 @@ Change config/auth.php file.
     
 **4) Add Blog table and model**
 
-Create migrtion file and model for Blog table by below command.
+Create migration file and model for Blog table by below command.
 
     php artisan make:migration create_blogs_table
     
@@ -207,7 +207,7 @@ Now open your database/migration/'your blog migration file'. and add your code h
         
 **6) Create Controller files**
 
-We will create two controller files. One for Register and another for Blogs by below comand.
+We will create two controller files. One for Register and another for Blogs by below command.
 
            php artisan make:controller RegisterController
            
@@ -438,7 +438,7 @@ Test Register API:
 ![picture](img/register.png)
 
 Let's test blog's CRUD. but before that, we need authentication to perform CRUD operation. because we used passport authentication.
-So, we will take access 'token' from register API's response. and add the token to each API's headers like below:
+So, we will access 'token' from register API's response. and add the token to each API's headers like below:
 
 ![picture](img/headers.png)
 
