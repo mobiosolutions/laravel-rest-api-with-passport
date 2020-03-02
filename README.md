@@ -1,9 +1,7 @@
 ## **Laravel REST API with Passport**
 
-In this, We will learn that how to work with REST API.
-We will use the in-built functionality of laravel for authentication which calls a passport.
-
-Laravel provides more security for APIs. So, it's good to work on API with Laravel. 
+Here, we are going to implement REST API with Passport authentication. 
+We will build a CRUD for Blog's API using Laravel Passport Authentication.
 
 #### **What is REST API?**
 Rest API (Representational State Transfer) api's are web standards base architecture and uses HTTP Protocol for exchanging data between applications or systems. 
