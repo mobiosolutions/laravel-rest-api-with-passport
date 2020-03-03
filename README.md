@@ -4,7 +4,7 @@ Here, we are going to implement REST API with Passport authentication.
 We will build a CRUD for Blog's API using Laravel Passport Authentication.
 
 #### **What is REST API?**
-Rest API (Representational State Transfer) api's are web standards base architecture and uses HTTP Protocol for exchanging data between applications or systems. 
+Rest API (Representational State Transfer) api's are web standards-based architecture and uses HTTP Protocol for exchanging data between applications or systems. 
 In RESTFUL web service HTTP methods like GET, POST, PUT and DELETE can be used to perform CRUD operations.
 
 #### **What is Passport?**
@@ -18,7 +18,6 @@ The passport package will register its own database migrations. This command wil
 
 #### **How to implement Passport in REST API?**
 In below example, we will create CRUD operation for Blog's API using passport authentication.
-So, let's start.
 
 **1) Create laravel project.**
 
@@ -30,11 +29,11 @@ Go to your project path in terminal and run below command for passport authentic
         
         composer require laravel/passport
         
-After successfully installing the package, we are required to get default migration for creating new passport tables in our database. so let's run bellow command:
+After the successful installation of a package, we required to get default migration for creating new passport tables in our database.  let's run below command:
 
     php artisan migrate
     
-Next, we need to install passport using command, Using passport:install command, it will create token keys for security. So let's run bellow command:
+Next, we need to install the Passport using command, and it will create token keys for security. let's run bellow command:
 
     php artisan passport:install
         
@@ -48,7 +47,7 @@ In user model, use HasApiTokens trait class of passport.
     use Illuminate\Foundation\Auth\User as Authenticatable;
     use Illuminate\Notifications\Notifiable;
     use Laravel\Passport\HasApiTokens;
-
+    
     class User extends Authenticatable
     {
         use Notifiable,HasApiTokens;
@@ -133,9 +132,9 @@ Change config/auth.php file.
         .....
     ]
     
-**4) Add Blog table and model**
+**4) Create Blog table and model**
 
-Create migration file and model for Blog table by below command.
+Create migration file and model for the Blog table by below command.
 
     php artisan make:migration create_blogs_table
     
@@ -177,7 +176,7 @@ Now open your database/migration/'your blog migration file'. and add your code h
         }
     }
     
- Add below code to your Blog model file.
+ Update below code to your Blog model file.
  
     <?php
     
@@ -205,13 +204,13 @@ Now open your database/migration/'your blog migration file'. and add your code h
         
 **6) Create Controller files**
 
-We will create two controller files. One for Register and another for Blogs by below command.
+Create two controller files. One for Register and another for Blog. Use below commands to create files.
 
            php artisan make:controller RegisterController
            
            php artisan make:controller BlogController      
            
-Add below code to register Controller.
+Update below code to register Controller.
 
     <?php
     
@@ -256,7 +255,7 @@ Add below code to register Controller.
         }
     }
     
-And add below code to BlogController
+Update below code to BlogController
 
     <?php
     
@@ -359,7 +358,7 @@ And add below code to BlogController
         {
             $blog = Blog::find($id);
     
-            //Check if blog found or not.
+            //Check if the blog found or not.
             if (is_null($blog)) {
                 $message = 'Blog not found.';
                 $status = false;
@@ -429,14 +428,14 @@ Now run below command in terminal:
     
 **8) Run APIs**
     
-Let's run out api's through postman.
+Let's run API through postman.
+
+Run authentication API to get passport access token & copy the token and use the same in Header of other CRUD APIs.
+Follow all screenshots to understand how to generate a token and use it in APIs to authenticate a user.
 
 Test Register API:
 
 ![picture](img/register.png)
-
-Let's test blog's CRUD. but before that, we need authentication to perform CRUD operation. because we used passport authentication.
-So, we will access 'token' from register API's response. and add the token to each API's headers like below:
 
 ![picture](img/headers.png)
 
@@ -461,15 +460,15 @@ Delete Blog:
 ![picture](img/deleteBlog.png)
 
 
-Now, we are going to write a test cases for register and CRUD api.
+Writing test cases for the register and CRUD APIs.
 
-So, let's make test files by below command.
+Commands to create test case file :
 
     php artisan make:test RegisterTest
     
     php artisan make:test BlogTest
     
-Add below code to `tests/Feature/RegisterTest.php` file.
+Update below code to `tests/Feature/RegisterTest.php` file.
 
     <?php
     
@@ -531,7 +530,7 @@ Add below code to `tests/Feature/RegisterTest.php` file.
         }
     }
 
-Add below code to `tests/Feature/BlogTest.php` file.
+Update below code to `tests/Feature/BlogTest.php` file.
 
     <?php
     
@@ -724,11 +723,16 @@ Add below code to `tests/Feature/BlogTest.php` file.
         }
     }
 
-now run the test cases to terminal by below command:
+Run the test cases to terminal by below command:
 
     php vendor/bin/phpunit /tests/Feature/RegisterTest.php
     
     php vendor/bin/phpunit /tests/Feature/BlogTest.php
+    
+That’s it. Happy Coding :)
+
+Hope this blog helps to understand how to use a passport package with laravel to create secure APIs.
+    
 
 
 
